@@ -136,5 +136,23 @@ namespace Framework.Maths
                 y = rhs.y / scale
             };
         }
+
+        public static bool operator==(Vector2 lhs, Vector2 rhs)
+        {
+            if(lhs.x == rhs.x && lhs.y == rhs.y)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool operator !=(Vector2 lhs, Vector2 rhs)
+        {
+            if (rhs == lhs)
+                return false;
+
+            return true;
+        }
     }
 }
