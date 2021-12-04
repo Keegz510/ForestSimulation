@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Raylib_cs;
+using static Raylib_cs.Raylib;
 
 namespace Framework.Engine
 {
@@ -17,7 +19,7 @@ namespace Framework.Engine
     public class Game
     {
 
-        
+        private WindowSettings windowSettings;
 
         Game()
         {
@@ -26,7 +28,11 @@ namespace Framework.Engine
 
         public void Initialize(WindowSettings window)
         {
+            windowSettings = window;
 
+            InitWindow(windowSettings.WindowWidth, windowSettings.WindowHeight, windowSettings.WindowTitle);
+            SetTargetFPS(60);
         }
+
     }
 }
