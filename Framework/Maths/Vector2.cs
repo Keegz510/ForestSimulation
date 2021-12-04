@@ -224,6 +224,15 @@ namespace Framework.Maths
             return true;
         }
 
+        /// <summary>
+        /// Sets the vector to 0
+        /// </summary>
+        public void Zero()
+        {
+            x = 0;
+            y = 0;
+        }
+
         public override string ToString()
         {
             return String.Format("X: {0}, Y: {1}", x, y);
