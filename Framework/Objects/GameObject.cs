@@ -52,7 +52,7 @@ namespace Framework
         #endregion
 
 
-        protected void UpdateTransform()
+        public void UpdateTransform()
         {
             if(parent != null)
             {
@@ -60,6 +60,50 @@ namespace Framework
             } else
             {
                 globalPosition = localPosition;
+            }
+
+            foreach(var go in children)
+            {
+                go.UpdateTransform();
+            }
+        }
+        
+        /// <summary>
+        /// Sets the new parent for this game object
+        /// </summary>
+        /// <param name="newParent">This game objects new parent</param>
+        public void SetParent(GameObject newParent)
+        {
+            if(parent != null)
+            {
+                parent.RemoveChild(this);
+            }
+
+            parent = newParent;
+            parent.AddChild(this);
+        }
+
+        /// <summary>
+        /// Adds a new child to this game object
+        /// </summary>
+        /// <param name="child">New child to add</param>
+        public void AddChild(GameObject child)
+        {
+            if(child != null && !children.Contains(child))
+            {
+                children.Add(child);
+            }
+        }
+
+        /// <summary>
+        /// Removes a children from the gameobject
+        /// </summary>
+        /// <param name="child">Child to remove</param>
+        public void RemoveChild(GameObject child)
+        {
+            if(child != null && children.Contains(child))
+            {
+                children.Remove(child);
             }
         }
 
