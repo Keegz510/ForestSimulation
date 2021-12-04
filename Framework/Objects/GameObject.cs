@@ -111,5 +111,47 @@ namespace Framework
             }
         }
 
+        public virtual void Init()
+        {
+            OnInit();
+            foreach(var child in children)
+            {
+                child.Init();
+            }
+        }
+
+
+        public virtual void OnInit()
+        {
+            
+        }
+
+        public void Update()
+        {
+            OnUpdate();
+            foreach(var child in children)
+            {
+                child.Update();
+            }
+        }
+
+        public virtual void OnUpdate()
+        {
+            
+        }
+
+        public virtual void Destroy()
+        {
+            OnDestroy();
+            foreach(var child in children)
+            {
+                child.Destroy();
+            }
+        }
+
+        public virtual void OnDestroy()
+        {
+            
+        }
     }
 }
