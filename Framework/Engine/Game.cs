@@ -12,7 +12,7 @@ namespace Framework.Engine
     {
         public int WindowWidth;
         public int WindowHeight;
-        public int bIsFullscreen;
+        public bool bIsFullscreen;
         public string WindowTitle;
     }
 
@@ -25,7 +25,7 @@ namespace Framework.Engine
         private float deltaTime;
         public float DeltaTime { get { return deltaTime; } }
 
-        Game()
+        public Game()
         {
             
         }
@@ -40,6 +40,26 @@ namespace Framework.Engine
 
             InitWindow(windowSettings.WindowWidth, windowSettings.WindowHeight, windowSettings.WindowTitle);
             SetTargetFPS(60);
+        }
+
+        public void Update()
+        {
+            deltaTime = GetFrameTime();
+
+            while(!WindowShouldClose())
+            {
+                // === UPDATE GAME HERE === //
+
+                BeginDrawing();
+                ClearBackground(Color.RAYWHITE);
+                // === DRAW GAME HERE === //
+                DrawText("Congrats! You created your first window!", 190, 200, 20, Color.LIGHTGRAY);
+                EndDrawing();
+               
+            }
+
+            CloseWindow();
+
         }
 
     }

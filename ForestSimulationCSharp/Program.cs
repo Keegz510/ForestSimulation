@@ -1,12 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-namespace Game
+﻿using Framework.Engine;
+namespace ForestSim
 {
     public static class Program
     {
         public static void Main()
         {
-            Console.WriteLine("Hello World");
+            Game game = new Game();
+            WindowSettings window = new WindowSettings
+            {
+                WindowWidth = 700,
+                WindowHeight = 450,
+                bIsFullscreen = false,
+                WindowTitle = "Forest Simulator"
+            };
+
+            game.Initialize(window);
+            game.Update();
         }
     }
 }
