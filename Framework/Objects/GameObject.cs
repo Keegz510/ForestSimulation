@@ -7,7 +7,7 @@ using Framework.Maths;
 
 namespace Framework
 {
-    public class GameObject
+    public class GameObject : IObject
     {
         #region Object Details
 
