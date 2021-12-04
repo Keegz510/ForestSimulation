@@ -30,7 +30,7 @@ namespace Framework
         protected float rotation = 0;
         /// Scale of this game object
         protected float scale = 1;
-
+        
         public Vector2 LocalPosition
         {
             get => localPosition;
@@ -43,15 +43,19 @@ namespace Framework
 
         public Vector2 GlobalPosition { get => globalPosition; }
 
+        /// Parent of this gameobject
         protected GameObject parent;
+        /// List of children under this game object
         protected List<GameObject> children = new List<GameObject>();
 
         public GameObject Parent { get => parent; }
         public List<GameObject> Children { get => children; }
 
         #endregion
-
-
+        
+        /// <summary>
+        /// Updates the current transform position of the game object & all it's children
+        /// </summary>
         public void UpdateTransform()
         {
             if(parent != null)
