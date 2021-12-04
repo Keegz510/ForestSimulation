@@ -29,5 +29,31 @@ namespace Framework.Maths
             y = vec.y;
         }
 
+        public static Vector2 operator+(Vector2 lhs, Vector2 rhs)
+        {
+            return new Vector2
+            {
+                x = lhs.x + rhs.x,
+                y = lhs.y + rhs.y
+            };
+        }
+
+        public static Vector2 operator +(Vector2 lhs, float scale)
+        {
+            return new Vector2
+            {
+                x = lhs.x + scale,
+                y = lhs.y + scale
+            };
+        }
+
+        public static Vector2 operator +(float scale, Vector2 rhs)
+        {
+            return new Vector2
+            {
+                x = rhs.x + scale,
+                y = rhs.y + scale
+            };
+        }
     }
 }
