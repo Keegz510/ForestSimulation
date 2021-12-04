@@ -18,14 +18,22 @@ namespace Framework.Engine
 
     public class Game
     {
-
+        /// Reference to the current windows settings
         private WindowSettings windowSettings;
+        
+        /// Frames Per Second
+        private float deltaTime;
+        public float DeltaTime { get { return deltaTime; } }
 
         Game()
         {
             
         }
 
+        /// <summary>
+        /// Initialize the game & creates a new window
+        /// </summary>
+        /// <param name="window">Game window settings</param>
         public void Initialize(WindowSettings window)
         {
             windowSettings = window;
