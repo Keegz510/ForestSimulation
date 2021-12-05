@@ -140,10 +140,6 @@ namespace Framework
         public virtual void Init()
         {
             OnInit();
-            foreach(var child in children)
-            {
-                child.Init();
-            }
         }
 
 
@@ -158,24 +154,16 @@ namespace Framework
 
 
             OnUpdate();
-            foreach(var child in children)
-            {
-                child.Update();
-            }
         }
 
         public virtual void OnUpdate()
         {
-            
+            Console.WriteLine("Test");
         }
 
         public virtual void Destroy()
         {
             OnDestroy();
-            foreach(var child in children)
-            {
-                child.Destroy();
-            }
         }
 
         public virtual void OnDestroy()

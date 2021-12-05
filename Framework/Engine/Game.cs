@@ -42,9 +42,13 @@ namespace Framework.Engine
             SetTargetFPS(60);
         }
 
+        /// <summary>
+        /// Handles Updating the game
+        /// </summary>
         public void Update()
         {
             deltaTime = GetFrameTime();
+
 
             while(!WindowShouldClose())
             {
