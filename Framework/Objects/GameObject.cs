@@ -143,7 +143,7 @@ namespace Framework
         }
 
 
-        public void Update()
+        public void Update(float deltaTime)
         {
             if (!bIsActive) return;
 

@@ -11,7 +11,7 @@ namespace Framework
         public void SetID(string id);
         public string GetID();
         public void Init();
-        public void Update();
+        public void Update(float deltaTime);
         public void Destroy();
 
     }
