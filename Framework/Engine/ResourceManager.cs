@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework;
-using static Raylib_cs.Raymath;
+
+
 namespace Framework.Engine
 {
     public class ResourceManager
@@ -14,10 +15,12 @@ namespace Framework.Engine
         /// List of game objects in the resource manager
         private List<IObject> gameObjects = new List<IObject>();
         // TODO: Add Owning State
+        private State owningState;
+        public State OwningState { get => owningState; }
 
-        public ResourceManager()
+        public ResourceManager(State owner)
         {
-
+            owningState = owner;
         }
 
         public void LoadGameObject(IObject go)
@@ -26,6 +29,7 @@ namespace Framework.Engine
             {
                 gameObjects.Add(go);
                 go.SetID(GenerateID());
+                go.Init();
             }
         }
 
