@@ -20,9 +20,12 @@ namespace Framework.Engine
 
         }
 
-        public void Update(float deltaTime)
+        public virtual void Update(float deltaTime)
         {
-
+            if(resourceManager != null)
+            {
+                resourceManager.Update(deltaTime);
+            }
         }
     }
 }
