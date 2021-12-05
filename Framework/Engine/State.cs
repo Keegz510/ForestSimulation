@@ -8,7 +8,19 @@ namespace Framework.Engine
 {
     public class State
     {
+        private ResourceManager resourceManager;
+        public ResourceManager ResourceManager { get => resourceManager; }
         public State()
+        {
+            resourceManager = new ResourceManager(this);
+        }
+
+        public void Init()
+        {
+
+        }
+
+        public void Update(float deltaTime)
         {
 
         }
