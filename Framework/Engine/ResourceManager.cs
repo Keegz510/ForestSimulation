@@ -42,6 +42,14 @@ namespace Framework.Engine
             }
         }
 
+        public void Update(float deltaTime)
+        {
+            foreach(var go in gameObjects)
+            {
+                go.Update(deltaTime);
+            }
+        }
+
         private string GenerateID()
         {
             string[] characters = { "a", "b", "c", "d", "e", "f", "g", "0", "1", "2", "3", "4", "5", "!", "@", "#", "$", "%" };
