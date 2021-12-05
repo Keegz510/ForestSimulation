@@ -29,6 +29,7 @@ namespace Framework.Engine
             {
                 gameObjects.Add(go);
                 go.SetID(GenerateID());
+                go.SetManager(this);
                 go.Init();
             }
         }
