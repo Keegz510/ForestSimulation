@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Framework.Engine
 {
-    public class State
+    public class GameState
     {
         private ResourceManager resourceManager;
         public ResourceManager ResourceManager { get => resourceManager; }
-        public State()
+        public GameState()
         {
             resourceManager = new ResourceManager(this);
         }

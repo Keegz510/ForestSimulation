@@ -15,10 +15,10 @@ namespace Framework.Engine
         /// List of game objects in the resource manager
         private List<IObject> gameObjects = new List<IObject>();
         // TODO: Add Owning State
-        private State owningState;
-        public State OwningState { get => owningState; }
+        private GameState owningState;
+        public GameState OwningState { get => owningState; }
 
-        public ResourceManager(State owner)
+        public ResourceManager(GameState owner)
         {
             owningState = owner;
         }
