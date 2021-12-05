@@ -7,7 +7,7 @@ using Framework.Maths;
 
 namespace Framework
 {
-    public class GameObject : IObject
+    public class GameObject : IObject, ITagable
     {
         #region Object Details
 
@@ -183,6 +183,36 @@ namespace Framework
             
         }
 
-        
+        public void AddTag(string tag)
+        {
+            if(!tags.Contains(tag))
+            {
+                tags.Add(tag);
+            }
+        }
+
+        public void AddTags(List<string> tags)
+        {
+            foreach(var tag in tags)
+            {
+                this.tags.Add(tag);
+            }
+        }
+
+        public void RemoveTag(string tag)
+        {
+            if(tags.Contains(tag))
+            {
+                tags.Remove(tag);
+            }
+        }
+
+        public bool HasTag(string tag)
+        {
+            if (tags.Contains(tag))
+                return true;
+
+            return false;
+        }
     }
 }
