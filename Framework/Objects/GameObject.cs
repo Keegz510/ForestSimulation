@@ -183,6 +183,10 @@ namespace Framework
             
         }
 
+        /// <summary>
+        /// Adds a new tag to the game object
+        /// </summary>
+        /// <param name="tag">Tag to add</param>
         public void AddTag(string tag)
         {
             if(!tags.Contains(tag))
@@ -191,6 +195,10 @@ namespace Framework
             }
         }
 
+        /// <summary>
+        /// Adds multiple tags to the game object
+        /// </summary>
+        /// <param name="tags"></param>
         public void AddTags(List<string> tags)
         {
             foreach(var tag in tags)
@@ -199,6 +207,10 @@ namespace Framework
             }
         }
 
+        /// <summary>
+        /// Removes the passed in tag
+        /// </summary>
+        /// <param name="tag">Tag to remove</param>
         public void RemoveTag(string tag)
         {
             if(tags.Contains(tag))
@@ -207,6 +219,11 @@ namespace Framework
             }
         }
 
+        /// <summary>
+        /// Check if the game object has the specified tag
+        /// </summary>
+        /// <param name="tag">Tag to check</param>
+        /// <returns>Returns if the game object has the tag</returns>
         public bool HasTag(string tag)
         {
             if (tags.Contains(tag))
