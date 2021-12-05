@@ -25,6 +25,9 @@ namespace Framework.Engine
         private float deltaTime;
         public float DeltaTime { get { return deltaTime; } }
 
+        /// List of loaded game states
+        private List<GameState> loadedStates = new List<GameState>();
+
         public Game()
         {
             
@@ -54,6 +57,14 @@ namespace Framework.Engine
             {
                 // === UPDATE GAME HERE === //
 
+                foreach(var state in loadedStates)
+                {
+                    if(state.bIsStateActive)
+                    {
+                        state.Update(deltaTime);
+                    }
+                }
+
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
                 // === DRAW GAME HERE === //
@@ -64,6 +75,24 @@ namespace Framework.Engine
 
             CloseWindow();
 
+        }
+
+        public void LoadState(GameState state)
+        {
+            if(!loadedStates.Contains(state))
+            {
+                loadedStates.Add(state);
+                state.Init();
+            }
+        }
+
+        public void UnloadState(GameState state)
+        {
+            if(loadedStates.Contains(state))
+            {
+                state.DeInit();
+                loadedStates.Remove(state);
+            }
         }
 
     }
