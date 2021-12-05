@@ -22,10 +22,19 @@ namespace Framework.Engine
 
         public void LoadGameObject(IObject go)
         {
-            if(!gameObjects.Contains(go))
+            if(go != null && !gameObjects.Contains(go))
             {
                 gameObjects.Add(go);
                 go.SetID(GenerateID());
+            }
+        }
+
+        public void UnloadGameObject(IObject go)
+        {
+            if(go != null && gameObjects.Contains(go))
+            {
+                usedIDs.Remove(go.GetID());
+                gameObjects.Remove(go);
             }
         }
 
