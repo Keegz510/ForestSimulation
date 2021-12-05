@@ -51,6 +51,9 @@ namespace Framework
         public GameObject Parent { get => parent; }
         public List<GameObject> Children { get => children; }
 
+        public bool bIsActive = true;
+
+
         #endregion
 
         public GameObject()
@@ -151,6 +154,9 @@ namespace Framework
 
         public void Update()
         {
+            if (!bIsActive) return;
+
+
             OnUpdate();
             foreach(var child in children)
             {
