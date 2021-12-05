@@ -44,7 +44,7 @@ namespace Framework
         public Vector2 GlobalPosition { get => globalPosition; }
 
         /// Parent of this gameobject
-        protected GameObject parent;
+        protected GameObject parent = null;
         /// List of children under this game object
         protected List<GameObject> children = new List<GameObject>();
 
@@ -52,7 +52,30 @@ namespace Framework
         public List<GameObject> Children { get => children; }
 
         #endregion
-        
+
+        public GameObject()
+        {
+            objectName = "Game Object";
+        }
+
+        public GameObject(string name)
+        {
+            objectName = name;
+        }
+
+        /// <summary>
+        /// Sets the ID for this object
+        /// </summary>
+        /// <param name="id">ID to set</param>
+        public void SetID(string id) => objectID = id;
+
+        /// <summary>
+        /// Returns the object ID
+        /// </summary>
+        /// <returns>Returns the object ID</returns>
+        public string GetID() => objectID;
+
+
         /// <summary>
         /// Updates the current transform position of the game object & all it's children
         /// </summary>
@@ -153,5 +176,7 @@ namespace Framework
         {
             
         }
+
+        
     }
 }
