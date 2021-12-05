@@ -15,6 +15,7 @@ namespace ForestSim
             };
 
             game.Initialize(window);
+            game.LoadState(new InGameState());
             game.Update();
         }
     }

@@ -152,7 +152,7 @@ namespace Framework
         {
             if (!bIsActive) return;
 
-
+            Console.WriteLine(objectID);
         }
 
 

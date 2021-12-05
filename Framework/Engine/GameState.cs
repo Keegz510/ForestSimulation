@@ -8,14 +8,16 @@ namespace Framework.Engine
 {
     public class GameState
     {
-        private ResourceManager resourceManager;
+        protected ResourceManager resourceManager;
         public ResourceManager ResourceManager { get => resourceManager; }
+
+        public bool bIsStateActive = true;
         public GameState()
         {
             resourceManager = new ResourceManager(this);
         }
 
-        public void Init()
+        public virtual void Init()
         {
 
         }
@@ -26,6 +28,11 @@ namespace Framework.Engine
             {
                 resourceManager.Update(deltaTime);
             }
+        }
+
+        public virtual void DeInit()
+        {
+
         }
     }
 }
