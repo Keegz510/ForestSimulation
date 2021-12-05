@@ -139,34 +139,19 @@ namespace Framework
 
         public virtual void Init()
         {
-            OnInit();
-        }
-
-
-        public virtual void OnInit()
-        {
             
         }
+
 
         public void Update()
         {
             if (!bIsActive) return;
 
 
-            OnUpdate();
         }
 
-        public virtual void OnUpdate()
-        {
-            Console.WriteLine("Test");
-        }
 
         public virtual void Destroy()
-        {
-            OnDestroy();
-        }
-
-        public virtual void OnDestroy()
         {
             
         }
