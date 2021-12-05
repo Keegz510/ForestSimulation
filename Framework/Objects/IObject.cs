@@ -8,12 +8,14 @@ namespace Framework
 {
     public interface IObject
     {
-        public abstract void Init();
-        public abstract void OnInit();
-        public abstract void Update();
-        public abstract void OnUpdate();
-        public abstract void Destroy();
-        public abstract void OnDestroy();
+        public void SetID(string id);
+        public string GetID();
+        public void Init();
+        public void OnInit();
+        public void Update();
+        public void OnUpdate();
+        public void Destroy();
+        public void OnDestroy();
 
     }
 }
