@@ -11,6 +11,6 @@ namespace Framework
         public void AddTag(string tag);
         public void AddTags(List<string> tags);
         public void RemoveTag(string tag);
-        public void HasTag(string tag);
+        public bool HasTag(string tag);
     }
 }
