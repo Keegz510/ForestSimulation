@@ -9,7 +9,7 @@ namespace Framework.Maths
     public class Vector2
     {
         /// Position Properties
-        float x, y;
+        public float x, y;
 
         /// <summary>
         /// Default Constructor
