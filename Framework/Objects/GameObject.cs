@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.Maths;
+using Framework.Engine;
 
 namespace Framework
 {
@@ -55,6 +56,8 @@ namespace Framework
 
 
         #endregion
+
+        ResourceManager manager;
 
         public GameObject()
         {
@@ -136,6 +139,8 @@ namespace Framework
                 children.Remove(child);
             }
         }
+
+        public void SetManager(ResourceManager manager) => this.manager = manager;
 
         public virtual void Init()
         {
