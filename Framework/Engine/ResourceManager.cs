@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework;
 using Raylib_cs;
+using static Raylib_cs.Raylib;
 
 public struct TextureDetails
 {
     public string TextureID;
     public string TexturePath;
     public Texture2D Texture;
+    public bool bIsLoaded;
 
     public static bool operator==(TextureDetails lhs, TextureDetails rhs)
     {
@@ -74,6 +76,49 @@ namespace Framework.Engine
                 usedIDs.Remove(go.GetID());
                 gameObjects.Remove(go);
             }
+        }
+
+        public Sprite LoadSprite(string texturePath)
+        {
+            if(texturePath != "")
+            {
+                // Loop through each texture to see if we have loaded it,
+                // if it has been loaded than return a new sprite
+                foreach(var textures in loadedTextures)
+                {
+                    if (textures.TexturePath == texturePath)
+                        return new Sprite(textures);
+                }
+
+                // Create a new texture
+                {
+                    // Create a new texture details
+                    TextureDetails details = new TextureDetails();
+                    // Set the texture path
+                    details.TexturePath = texturePath;
+                    // Attempt to load the texture
+                    details.Texture = Raylib.LoadTexture(texturePath);
+
+                    // Check if the texture loaded successfully
+                    if (details.Texture.id > 0)
+                    {
+                        // Generate an ID for the texture
+                        details.TextureID = GenerateID();
+                        // Set the texture to loaded
+                        details.bIsLoaded = true;
+                        // Add the loaded texture to the resource manager
+                        loadedTextures.Add(details);
+                        // Create a new sprite
+                        return new Sprite(details);
+                    }
+                }
+                
+            }
+
+            // Log an error and pause the game if we're unable to load a texture
+            Debug.LogError("Unable To Load Image @ Path: " + texturePath, true);
+            // Return empty
+            return null;
         }
 
         public void Update(float deltaTime)
