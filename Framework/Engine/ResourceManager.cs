@@ -4,6 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework;
+using Raylib_cs;
+
+public struct TextureDetails
+{
+    public string TextureID;
+    public string TexturePath;
+    public Texture2D Texture;
+
+    public static bool operator==(TextureDetails lhs, TextureDetails rhs)
+    {
+        if(lhs.TextureID == rhs.TextureID)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static bool operator!=(TextureDetails lhs, TextureDetails rhs)
+    {
+        if(lhs == rhs)
+        {
+            return false;
+        }
+
+        return false;
+    }
+}
 
 
 namespace Framework.Engine
@@ -14,7 +42,12 @@ namespace Framework.Engine
         private List<string> usedIDs = new List<string>();
         /// List of game objects in the resource manager
         private List<IObject> gameObjects = new List<IObject>();
-        // TODO: Add Owning State
+        /// Stores all the loaded textures
+        private List<TextureDetails> loadedTextures = new List<TextureDetails>();
+        /// List of loaded sprites that we want to render
+        private List<IDrawable> sprites = new List<IDrawable>();
+        
+        /// State this this resource manager belongs to
         private GameState owningState;
         public GameState OwningState { get => owningState; }
 
