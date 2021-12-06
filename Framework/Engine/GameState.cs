@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Framework.Engine
 {
-    public class GameState
+    public abstract class GameState
     {
         protected ResourceManager resourceManager;
         public ResourceManager ResourceManager { get => resourceManager; }
