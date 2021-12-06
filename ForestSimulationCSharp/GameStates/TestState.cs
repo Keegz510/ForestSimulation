@@ -33,6 +33,9 @@ namespace ForestSim
                 field.SetTint(Color.BLACK);
                 field.SetPosition(new Framework.Maths.Vector2(200, 200));
                 resourceManager.AddDrawable(field);
+
+                Framework.Maths.Timer timer = new Framework.Maths.Timer(3.0f, true, TestTimer);
+                resourceManager.AddTimer(timer);
             }
         }
 
@@ -45,6 +48,11 @@ namespace ForestSim
         public void TestButton()
         {
             Debug.LogMsg("Button Clicked");
+        }
+
+        public void TestTimer()
+        {
+            Debug.LogCustom("Timer Completed", ConsoleColor.Yellow, false);
         }
     }
 }
