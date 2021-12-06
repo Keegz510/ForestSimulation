@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework;
+using Framework.Maths;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
 
@@ -48,6 +49,10 @@ namespace Framework.Engine
         private List<TextureDetails> loadedTextures = new List<TextureDetails>();
         /// List of loaded sprites that we want to render
         private List<IDrawable> sprites = new List<IDrawable>();
+
+
+        /// List of active timers
+        private List<Maths.Timer> timers = new List<Maths.Timer>();
         
         /// State this this resource manager belongs to
         private GameState owningState;
@@ -141,6 +146,20 @@ namespace Framework.Engine
             if (loadedTextures.Contains(texture))
             {
                 loadedTextures.Remove(texture);
+            }
+        }
+
+        public void AddTimer(Maths.Timer newTimer)
+        {
+            if (newTimer != null && !timers.Contains(newTimer))
+                timers.Add(newTimer);
+        }
+
+        public void RemoveTimer(Maths.Timer timer)
+        {
+            if(timer != null && timers.Contains(timer))
+            {
+                timers.Remove(timer);
             }
         }
 
