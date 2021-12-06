@@ -153,8 +153,6 @@ namespace Framework
         public virtual void Update(float deltaTime)
         {
             if (!bIsActive) return;
-
-            Console.WriteLine(objectID);
         }
 
         /// <summary>

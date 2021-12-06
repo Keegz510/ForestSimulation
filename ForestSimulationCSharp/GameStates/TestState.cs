@@ -34,9 +34,9 @@ namespace ForestSim
                     Height = 32
                 };
 
-                Button btn = new Button(buttonSize, "TestButton");
+                Button btn = new Button(buttonSize, TestButton, "TestButton");
                 btn.SetPosition(new Framework.Maths.Vector2(100, 100));
-                
+                resourceManager.LoadGameObject(btn);
                 sprite = resourceManager.LoadSprite("Images/Square32x32.png");
                 sprite.SetParent(btn);
                 sprite.SetPosition(new Framework.Maths.Vector2(0, 0));
@@ -49,6 +49,11 @@ namespace ForestSim
         {
             base.Update(deltaTime);
 
+        }
+
+        public void TestButton()
+        {
+            Debug.LogMsg("Button Clicked");
         }
     }
 }
