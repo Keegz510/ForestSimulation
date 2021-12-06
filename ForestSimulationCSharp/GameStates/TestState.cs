@@ -28,20 +28,11 @@ namespace ForestSim
 
             // ==== TEST OBJECT === //
             {
-                Size buttonSize = new Size
-                {
-                    Width = 32,
-                    Height = 32
-                };
-
-                Button btn = new Button(buttonSize, TestButton, "TestButton");
-                btn.SetPosition(new Framework.Maths.Vector2(100, 100));
-                resourceManager.LoadGameObject(btn);
-                sprite = resourceManager.LoadSprite("Images/Square32x32.png");
-                sprite.SetParent(btn);
-                sprite.SetPosition(new Framework.Maths.Vector2(0, 0));
-                sprite.SetTint(Color.GREEN);
-               
+                Font font = LoadFont("Fonts/Pergola.otf");
+                TextField field = new TextField("Test Field", font, "TestTextField");
+                field.SetTint(Color.BLACK);
+                field.SetPosition(new Framework.Maths.Vector2(200, 200));
+                resourceManager.AddDrawable(field);
             }
         }
 
