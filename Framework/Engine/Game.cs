@@ -73,7 +73,13 @@ namespace Framework.Engine
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
                 // === DRAW GAME HERE === //
-                DrawText("Congrats! You created your first window!", 190, 200, 20, Color.LIGHTGRAY);
+                foreach(var state in loadedStates)
+                {
+                    if(state.bIsStateActive)
+                    {
+                        state.Draw();
+                    }
+                }
                 EndDrawing();
                
             }

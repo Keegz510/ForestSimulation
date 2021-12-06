@@ -17,7 +17,7 @@ namespace ForestSim
         {
             base.Init();
 
-            resourceManager.LoadGameObject(new GameObject());
+            resourceManager.LoadSprite("Images/Square32x32.png");
         }
     }
 }

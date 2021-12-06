@@ -27,6 +27,20 @@ namespace Framework.Engine
             if(resourceManager != null)
             {
                 resourceManager.Update(deltaTime);
+            } else
+            {
+                Debug.LogWarning("No Resource Manager on state");
+            }
+        }
+
+        public virtual void Draw()
+        {
+            if(resourceManager != null)
+            {
+                resourceManager.Draw();
+            } else
+            {
+                Debug.LogWarning("No Resource Manager on Game State");
             }
         }
 

@@ -41,9 +41,6 @@ namespace Framework
 
         public Texture2D GetTexture() => textureDetails.Texture;
 
-        public void SetTexture(string texturePath, Texture2D texture)
-        {
-           
-        }
+        public void SetTexture(TextureDetails details) => textureDetails = details;
     }
 }

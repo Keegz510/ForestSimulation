@@ -148,6 +148,17 @@ namespace Framework.Engine
             }
         }
 
+        public void Draw()
+        {
+            if(sprites.Count > 0)
+            {
+                foreach(var sprite in sprites)
+                {
+                    sprite.Draw();
+                }
+            }
+        }
+
         private string GenerateID()
         {
             string[] characters = { "a", "b", "c", "d", "e", "f", "g", "0", "1", "2", "3", "4", "5", "!", "@", "#", "$", "%" };
