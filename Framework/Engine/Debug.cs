@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.Engine;
 
-namespace Framework.Debug
+namespace Framework
 {
     public static class Debug
     {

@@ -124,6 +124,22 @@ namespace Framework.Engine
             return null;
         }
 
+        public void UnloadSprite(Sprite sprite)
+        {
+            if(sprite != null && sprites.Contains(sprite))
+            {
+                sprites.Remove(sprite);
+            }
+        }
+
+        public void UnloadTexture(TextureDetails texture)
+        {
+            if (loadedTextures.Contains(texture))
+            {
+                loadedTextures.Remove(texture);
+            }
+        }
+
         public void Update(float deltaTime)
         {
             foreach(var go in gameObjects)
