@@ -10,7 +10,7 @@ namespace Framework
     public interface IDrawable
     {
         public void Draw();
-        public void LoadTexture(string texturePath);
+        public void SetTexture(string texturePath, Texture2D texture);
         public Texture2D GetTexture();
       
     }

@@ -28,9 +28,9 @@ namespace Framework
 
         public Texture2D GetTexture() => texture;
 
-        public void LoadTexture(string texturePath)
+        public void SetTexture(string texturePath, Texture2D texture)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }
