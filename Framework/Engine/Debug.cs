@@ -20,6 +20,8 @@ namespace Framework
 
         public static void LogWarning(string message)
         {
+            if (!isDebugMode) return;
+
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
@@ -27,6 +29,8 @@ namespace Framework
 
         public static void LogError(string message, bool pauseGame = false)
         {
+            if (!isDebugMode) return;
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
@@ -42,6 +46,8 @@ namespace Framework
 
         public static void LogCustom(string message, ConsoleColor textColor, bool pauseGame)
         {
+            if (!isDebugMode) return;
+
             Console.ForegroundColor = textColor;
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
@@ -51,6 +57,8 @@ namespace Framework
 
         public static void PauseGame()
         {
+            if (!isDebugMode) return;
+
             foreach (var state in Game.Instance.LoadedStates)
             {
                 state.bIsStateActive = false;
