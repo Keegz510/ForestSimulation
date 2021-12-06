@@ -10,24 +10,38 @@ using static Raylib_cs.Raylib;
 
 namespace ForestSim
 {
-    public class InGameState : GameState
+    public class TestState : GameState
     {
 
         Sprite sprite;
 
-        public InGameState() : base()
+        public TestState() : base()
         { }
 
         public override void Init()
         {
             base.Init();
+
+            
+            
+
+
             // ==== TEST OBJECT === //
             {
+                Size buttonSize = new Size
+                {
+                    Width = 32,
+                    Height = 32
+                };
+
+                Button btn = new Button(buttonSize, "TestButton");
+                btn.SetPosition(new Framework.Maths.Vector2(100, 100));
+                
                 sprite = resourceManager.LoadSprite("Images/Square32x32.png");
-                sprite.SetPosition(new Framework.Maths.Vector2(100, 100));
+                sprite.SetParent(btn);
+                sprite.SetPosition(new Framework.Maths.Vector2(0, 0));
                 sprite.SetTint(Color.GREEN);
-                sprite.Rotation = 45.0f;
-                sprite.Scale = 3.0f;
+               
             }
         }
 
