@@ -108,8 +108,11 @@ namespace Framework.Engine
                         details.bIsLoaded = true;
                         // Add the loaded texture to the resource manager
                         loadedTextures.Add(details);
+
                         // Create a new sprite
-                        return new Sprite(details);
+                        Sprite sprite = new Sprite(details);
+                        sprites.Add(sprite);
+                        return sprite;
                     }
                 }
                 
