@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Framework.Engine;
 using Framework;
+using Raylib_cs;
 
 namespace ForestSim
 {
@@ -16,8 +17,9 @@ namespace ForestSim
         public override void Init()
         {
             base.Init();
-
-            resourceManager.LoadSprite("Images/Square32x32.png");
+            Sprite sprite = resourceManager.LoadSprite("Images/Square32x32.png");
+            sprite.SetPosition(new Framework.Maths.Vector2(100, 100));
+            sprite.SetTint(Color.GREEN);
         }
     }
 }

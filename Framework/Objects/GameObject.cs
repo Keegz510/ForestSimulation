@@ -212,5 +212,7 @@ namespace Framework
 
             return false;
         }
+
+        public void SetPosition(Vector2 pos) => LocalPosition = pos;
     }
 }
