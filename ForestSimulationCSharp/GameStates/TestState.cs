@@ -22,8 +22,8 @@ namespace ForestSim
         {
             base.Init();
 
-            
-            
+
+
 
 
             // ==== TEST OBJECT === //
@@ -33,9 +33,6 @@ namespace ForestSim
                 field.SetTint(Color.BLACK);
                 field.SetPosition(new Framework.Maths.Vector2(200, 200));
                 resourceManager.AddDrawable(field);
-
-                Framework.Maths.Timer timer = new Framework.Maths.Timer(3.0f, true, TestTimer);
-                resourceManager.AddTimer(timer);
             }
         }
 
