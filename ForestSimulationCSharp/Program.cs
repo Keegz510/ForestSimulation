@@ -8,14 +8,14 @@ namespace ForestSim
             Game game = new Game();
             WindowSettings window = new WindowSettings
             {
-                WindowWidth = 700,
-                WindowHeight = 450,
+                WindowWidth = 1200,
+                WindowHeight = 850,
                 bIsFullscreen = false,
                 WindowTitle = "Forest Simulator"
             };
 
             game.Initialize(window);
-            game.LoadState(new TestState());
+            game.LoadState(new MainMenuState());
             game.Update();
         }
     }

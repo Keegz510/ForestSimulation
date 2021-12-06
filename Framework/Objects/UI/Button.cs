@@ -16,25 +16,47 @@ namespace Framework
 {
     public class Button : GameObject
     {
+        /// Reference to the action that is performed when button is clicked
         protected Action onClickAction;
-        protected bool isHovering = false;
+        /// Reference to the size of the object
         protected Size buttonSize;
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// <param name="buttonSize">Size of the button</param>
         public Button(Size buttonSize) : base()
         {
             this.buttonSize = buttonSize;   
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="buttonSize">Size of the button</param>
+        /// <param name="name">Name of the game object</param>
         public Button(Size buttonSize, string name) : base(name)
         {
             this.buttonSize = buttonSize;
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="buttonSize">Size of the button</param>
+        /// <param name="onClick">Action to perform when button is clicked</param>
         public Button(Size buttonSize, Action onClick) : base()
         {
             onClickAction = onClick;
             this.buttonSize = buttonSize;
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="buttonSize">Size of the button</param>
+        /// <param name="onClick">Action to perform when button is clicked</param>
+        /// <param name="name">Name of the game object</param>
         public Button(Size buttonSize, Action onClick, string name) : base(name)
         {
             this.buttonSize = buttonSize;
@@ -54,6 +76,10 @@ namespace Framework
             }
         }
 
+        /// <summary>
+        /// Checks if the object is begin hovered over
+        /// </summary>
+        /// <returns>If being hovered or not</returns>
         protected bool CheckIfHovering()
         {
             Vector2 mousePosition = new Vector2
@@ -73,6 +99,9 @@ namespace Framework
             return false;
         }
 
+        /// <summary>
+        /// Action performed when the button is clicked
+        /// </summary>
         public void OnClick()
         {
             if(onClickAction != null)
@@ -81,6 +110,7 @@ namespace Framework
             }
         }
 
+        /// Sets the action we wish to perform when the button is clicked
         public void SetOnClick(Action onClick) => onClickAction = onClick;
     }
 }

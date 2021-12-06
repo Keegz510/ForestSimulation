@@ -1,4 +1,5 @@
-﻿using Raylib_cs;
+﻿
+using Raylib_cs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,7 @@ namespace Framework
             tint = newTint;
         }
 
+        /// Set the font of this text field
         public void SetFont(Font newFont) => font = newFont;
     }
 }

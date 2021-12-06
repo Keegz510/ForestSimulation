@@ -31,7 +31,8 @@ namespace Framework
         protected float rotation = 0;
         /// Scale of this game object
         protected float scale = 1;
-        
+
+        /// Local Position of this game Object
         public Vector2 LocalPosition
         {
             get => localPosition;
@@ -42,9 +43,12 @@ namespace Framework
             }
         }
 
+        /// Global position of this game object
         public Vector2 GlobalPosition { get => globalPosition; }
 
+        /// Global position of this game object
         public float Rotation { get => rotation; set { rotation = value; } }
+        /// Scale of this game object
         public float Scale { get => scale; set => scale = value; }
 
         /// Parent of this gameobject
@@ -52,21 +56,32 @@ namespace Framework
         /// List of children under this game object
         protected List<GameObject> children = new List<GameObject>();
 
+        /// Gets the parent of this object
         public GameObject Parent { get => parent; }
+        /// Gets the children of the object
         public List<GameObject> Children { get => children; }
 
+        /// If the object is active or not
         public bool bIsActive = true;
 
 
         #endregion
 
+        /// Reference to the resource manager for this object
         protected ResourceManager manager;
 
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public GameObject()
         {
             objectName = "Game Object";
         }
 
+        /// <summary>
+        /// Constructor that names the object
+        /// </summary>
+        /// <param name="name">Name of the object</param>
         public GameObject(string name)
         {
             objectName = name;

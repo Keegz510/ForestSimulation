@@ -8,33 +8,7 @@ using Framework.Maths;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
 
-public struct TextureDetails
-{
-    public string TextureID;
-    public string TexturePath;
-    public Texture2D Texture;
-    public bool bIsLoaded;
 
-    public static bool operator==(TextureDetails lhs, TextureDetails rhs)
-    {
-        if(lhs.TextureID == rhs.TextureID)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    public static bool operator!=(TextureDetails lhs, TextureDetails rhs)
-    {
-        if(lhs == rhs)
-        {
-            return false;
-        }
-
-        return false;
-    }
-}
 
 
 namespace Framework.Engine
@@ -56,6 +30,7 @@ namespace Framework.Engine
         
         /// State this this resource manager belongs to
         private GameState owningState;
+        /// Returns the owning State
         public GameState OwningState { get => owningState; }
 
         public ResourceManager(GameState owner)
@@ -63,8 +38,13 @@ namespace Framework.Engine
             owningState = owner;
         }
 
+        /// <summary>
+        /// Loads a new game object into this resource manager
+        /// </summary>
+        /// <param name="go">Game Object to add</param>
         public void LoadGameObject(IObject go)
         {
+            // Ensure the object isn't null & not already loaded
             if(go != null && !gameObjects.Contains(go))
             {
                 gameObjects.Add(go);
@@ -74,15 +54,25 @@ namespace Framework.Engine
             }
         }
 
+        /// <summary>
+        /// handles removing a game object
+        /// </summary>
+        /// <param name="go">Game object to remove</param>
         public void UnloadGameObject(IObject go)
         {
+            // Ensure the object isn't null and that it has been loaded
             if(go != null && gameObjects.Contains(go))
             {
-                usedIDs.Remove(go.GetID());
-                gameObjects.Remove(go);
+                usedIDs.Remove(go.GetID());             // Remove the ID from the used ids so it can be used again
+                gameObjects.Remove(go);                 // Remove the game obejct
             }
         }
 
+        /// <summary>
+        /// Handles Loading a new sprite
+        /// </summary>
+        /// <param name="texturePath">Location of the texture</param>
+        /// <returns>The created sprite</returns>
         public Sprite LoadSprite(string texturePath)
         {
             if(texturePath != "")
@@ -114,7 +104,7 @@ namespace Framework.Engine
                         // Add the loaded texture to the resource manager
                         loadedTextures.Add(details);
 
-                        // Create a new sprite
+                        // Create a new sprite & add to the list
                         Sprite sprite = new Sprite(details);
                         sprites.Add(sprite);
                         gameObjects.Add(sprite);
@@ -131,8 +121,13 @@ namespace Framework.Engine
             return null;
         }
 
+        /// Adds a new object that can be drawn
         public void AddDrawable(IDrawable drawable) => sprites.Add(drawable);
 
+        /// <summary>
+        /// Handle Removes the sprite from the resource manager
+        /// </summary>
+        /// <param name="sprite"></param>
         public void UnloadSprite(Sprite sprite)
         {
             if(sprite != null && sprites.Contains(sprite))
