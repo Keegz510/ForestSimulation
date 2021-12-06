@@ -39,5 +39,23 @@ namespace Framework
                 }
             }
         }
+
+        public static void LogCustom(string message, ConsoleColor textColor, bool pauseGame)
+        {
+            Console.ForegroundColor = textColor;
+            Console.WriteLine(message);
+            Console.ForegroundColor = ConsoleColor.White;
+
+            if (pauseGame) PauseGame();
+        }
+
+        public static void PauseGame()
+        {
+            foreach (var state in Game.Instance.LoadedStates)
+            {
+                state.bIsStateActive = false;
+            }
+           
+        }
     }
 }
