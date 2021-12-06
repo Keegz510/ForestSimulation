@@ -12,6 +12,7 @@ namespace Framework
         public void Draw();
         public void SetTexture(TextureDetails details);
         public Texture2D GetTexture();
+        public void SetTint(Color newTint);
       
     }
 }

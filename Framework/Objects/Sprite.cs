@@ -15,7 +15,7 @@ namespace Framework
 
         protected Color tint;
 
-        public bool IsVisible;
+        public bool IsVisible = true;
 
         public Sprite()
         { }
@@ -42,5 +42,7 @@ namespace Framework
         public Texture2D GetTexture() => textureDetails.Texture;
 
         public void SetTexture(TextureDetails details) => textureDetails = details;
+
+        public void SetTint(Color newTint) => tint = newTint;
     }
 }
