@@ -17,7 +17,7 @@ namespace Framework
 
         public bool IsVisible = true;
 
-        public Sprite()
+        public Sprite() : base()
         { }
 
         public Sprite(TextureDetails details)
@@ -44,5 +44,12 @@ namespace Framework
         public void SetTexture(TextureDetails details) => textureDetails = details;
 
         public void SetTint(Color newTint) => tint = newTint;
+
+        public override void Destroy()
+        {
+            base.Destroy();
+
+            manager.UnloadSprite(this);
+        }
     }
 }

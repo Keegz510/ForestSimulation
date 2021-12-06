@@ -112,6 +112,8 @@ namespace Framework.Engine
                         // Create a new sprite
                         Sprite sprite = new Sprite(details);
                         sprites.Add(sprite);
+                        gameObjects.Add(sprite);
+                        sprite.SetManager(this);
                         return sprite;
                     }
                 }

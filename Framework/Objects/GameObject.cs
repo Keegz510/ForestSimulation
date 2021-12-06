@@ -60,7 +60,7 @@ namespace Framework
 
         #endregion
 
-        ResourceManager manager;
+        protected ResourceManager manager;
 
         public GameObject()
         {
@@ -143,13 +143,12 @@ namespace Framework
             }
         }
 
-        public void SetManager(ResourceManager manager) => this.manager = manager;
+        public void SetManager(ResourceManager newManager) => manager = newManager;
 
         public virtual void Init()
         {
             
         }
-
 
         public virtual void Update(float deltaTime)
         {
@@ -158,10 +157,12 @@ namespace Framework
             Console.WriteLine(objectID);
         }
 
-
+        /// <summary>
+        /// Handles Destroying the game object
+        /// </summary>
         public virtual void Destroy()
         {
-            
+            manager.UnloadGameObject(this);
         }
 
         /// <summary>
