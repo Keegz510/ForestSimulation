@@ -18,6 +18,7 @@ namespace Framework.Engine
 
     public class Game
     {
+        public static Game Instance;
         /// Reference to the current windows settings
         private WindowSettings windowSettings;
         
@@ -27,10 +28,14 @@ namespace Framework.Engine
 
         /// List of loaded game states
         private List<GameState> loadedStates = new List<GameState>();
+        public List<GameState> LoadedStates { get => loadedStates; }
 
         public Game()
         {
-            
+            if(Instance == null)
+            {
+                Instance = this;
+            }
         }
 
         /// <summary>
@@ -94,6 +99,8 @@ namespace Framework.Engine
                 loadedStates.Remove(state);
             }
         }
+
+        
 
     }
 }
