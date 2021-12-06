@@ -44,8 +44,8 @@ namespace Framework
 
         public Vector2 GlobalPosition { get => globalPosition; }
 
-        public float Rotation { get => rotation; }
-        public float Scale { get => scale; }
+        public float Rotation { get => rotation; set { rotation = value; } }
+        public float Scale { get => scale; set => scale = value; }
 
         /// Parent of this gameobject
         protected GameObject parent = null;
