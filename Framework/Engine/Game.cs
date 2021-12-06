@@ -55,14 +55,14 @@ namespace Framework.Engine
         /// </summary>
         public void Update()
         {
-            deltaTime = GetFrameTime();
+            
 
 
             while(!WindowShouldClose())
             {
                 // === UPDATE GAME HERE === //
-
-                foreach(var state in loadedStates)
+                deltaTime = GetFrameTime();
+                foreach (var state in loadedStates)
                 {
                     if(state.bIsStateActive)
                     {

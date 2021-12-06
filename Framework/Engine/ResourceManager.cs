@@ -152,7 +152,10 @@ namespace Framework.Engine
         public void AddTimer(Maths.Timer newTimer)
         {
             if (newTimer != null && !timers.Contains(newTimer))
+            {
                 timers.Add(newTimer);
+                newTimer.SetManager(this);
+            }
         }
 
         public void RemoveTimer(Maths.Timer timer)
@@ -168,6 +171,11 @@ namespace Framework.Engine
             foreach(var go in gameObjects)
             {
                 go.Update(deltaTime);
+            }
+
+            foreach(var timer in timers)
+            {
+                timer.Update(deltaTime);
             }
         }
 
