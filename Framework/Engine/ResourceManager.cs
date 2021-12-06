@@ -172,7 +172,7 @@ namespace Framework.Engine
 
                 for (int i = 0; i < idLength; ++i)
                 {
-                    newID += characters[Raylib_cs.Raylib.GetRandomValue(0, characters.Length)];
+                    newID += characters[Raylib_cs.Raylib.GetRandomValue(0, characters.Length - 1)];
                 }
 
                 if (!usedIDs.Contains(newID))
