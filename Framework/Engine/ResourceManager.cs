@@ -126,6 +126,8 @@ namespace Framework.Engine
             return null;
         }
 
+        public void AddDrawable(IDrawable drawable) => sprites.Add(drawable);
+
         public void UnloadSprite(Sprite sprite)
         {
             if(sprite != null && sprites.Contains(sprite))
