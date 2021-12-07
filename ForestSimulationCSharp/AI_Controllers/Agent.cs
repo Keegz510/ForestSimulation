@@ -10,8 +10,8 @@ namespace ForestSim
 {
     public class Agent : GameObject
     {
-        protected Vector2 velocity = new Vector2();
-        protected Vector2 force = new Vector2();
+        public Vector2 Velocity = new Vector2();
+        public Vector2 Force = new Vector2();
 
         public override void Update(float deltaTime)
         {
