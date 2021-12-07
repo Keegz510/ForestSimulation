@@ -41,6 +41,7 @@ namespace ForestSim
             // Create the button and set the scale to be 2
             Button btn = new Button(buttonSize, LoadSim, "LoadSimBtn");
             btn.Scale = 2;
+            resourceManager.LoadGameObject(btn);
 
             // Set the position of the button
             btn.SetPosition(new Vector2(10, 20));
