@@ -95,7 +95,8 @@ namespace ForestSim
 
         public void LoadSim()
         {
-            Debug.LogMsg("Test Message");
+            Game.Instance.LoadState(new TestState());
+            Game.Instance.UnloadState(this);
         }
 
         public void ExitSim()
