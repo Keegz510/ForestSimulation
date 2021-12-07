@@ -64,7 +64,7 @@ namespace Framework.Engine
             {
                 // === UPDATE GAME HERE === //
                 deltaTime = GetFrameTime();
-                foreach (var state in loadedStates)
+                foreach (var state in loadedStates.ToList())
                 {
                     if(state.bIsStateActive)
                     {
@@ -75,7 +75,7 @@ namespace Framework.Engine
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
                 // === DRAW GAME HERE === //
-                foreach(var state in loadedStates)
+                foreach(var state in loadedStates.ToList())
                 {
                     if(state.bIsStateActive)
                     {
