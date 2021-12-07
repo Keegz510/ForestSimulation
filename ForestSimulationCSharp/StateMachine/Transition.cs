@@ -10,13 +10,13 @@ namespace ForestSim
     {
         protected State target;
         protected ICondition condition;
-        Transition(State target, ICondition condition)
+        public Transition(State target, ICondition condition)
         {
             this.target = target;
             this.condition = condition;
         }
 
-        State GetTargetState() => target;
-        bool HasTriggered(Agent agent) => condition.Test(agent);
+        public State GetTargetState() => target;
+        public bool HasTriggered(Agent agent) => condition.Test(agent);
     }
 }

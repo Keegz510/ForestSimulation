@@ -13,8 +13,8 @@ namespace ForestSim
         { }
 
         public abstract void Update(Agent agent, float dt);
-        public virtual void Init() { }
-        public virtual void Exit() { }
+        public virtual void Init(Agent agent) { }
+        public virtual void Exit(Agent agent) { }
 
         public void AddTransition(Transition transition)
         {
@@ -23,7 +23,7 @@ namespace ForestSim
 
         public Transition GetTriggeredTransition(Agent agent)
         {
-            for(var t in transitions)
+            foreach(var t in transitions)
             {
                 if(t.HasTriggered(agent))
                 {
