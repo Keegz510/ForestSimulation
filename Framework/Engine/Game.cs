@@ -28,6 +28,7 @@ namespace Framework.Engine
 
         /// List of loaded game states
         private List<GameState> loadedStates = new List<GameState>();
+        /// Returns a list of loaded states
         public List<GameState> LoadedStates { get => loadedStates; }
 
         bool bIsRunning = true;
@@ -90,6 +91,10 @@ namespace Framework.Engine
 
         }
 
+        /// <summary>
+        /// Handles adding a new state
+        /// </summary>
+        /// <param name="state">State we wish to add</param>
         public void LoadState(GameState state)
         {
             if(!loadedStates.Contains(state))
@@ -99,6 +104,10 @@ namespace Framework.Engine
             }
         }
 
+        /// <summary>
+        /// Handles removing a new state
+        /// </summary>
+        /// <param name="state">State we wish to remove</param>
         public void UnloadState(GameState state)
         {
             if(loadedStates.Contains(state))
@@ -108,6 +117,9 @@ namespace Framework.Engine
             }
         }
 
+        /// <summary>
+        /// Stops the game from running
+        /// </summary>
         public void QuitGame()
         {
             bIsRunning = false;
