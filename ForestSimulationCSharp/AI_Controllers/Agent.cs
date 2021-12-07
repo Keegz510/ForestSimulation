@@ -22,7 +22,10 @@ namespace ForestSim
             Force = new Vector2(0, 0);
             Velocity.Zero();
 
-            // TODO: Update Behaviours
+            foreach(var b in behaviours)
+            {
+                b.Update(this, deltaTime);
+            }
 
             velocity += (force * deltaTime);
             localPosition += (velocity * deltaTime);
