@@ -27,8 +27,10 @@ namespace ForestSim
                 b.Update(this, deltaTime);
             }
 
-            velocity += (force * deltaTime);
-            localPosition += (velocity * deltaTime);
+            Velocity += (Force * deltaTime);
+
+            SetPosition(localPosition += (Velocity * deltaTime));
+            
         }
     }
 }
