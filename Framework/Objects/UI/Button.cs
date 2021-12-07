@@ -20,6 +20,7 @@ namespace Framework
         protected Action onClickAction;
         /// Reference to the size of the object
         protected Size buttonSize;
+        public Size ButtonSize { get => buttonSize; }
 
         /// <summary>
         /// Default Constructor
@@ -88,9 +89,9 @@ namespace Framework
                 y = GetMousePosition().Y
             };
 
-            if (mousePosition.x > GlobalPosition.x && mousePosition.x < (mousePosition.x + buttonSize.Width))
+            if (mousePosition.x > GlobalPosition.x && mousePosition.x < (mousePosition.x + (buttonSize.Width * scale)))
             {
-                if (mousePosition.y > GlobalPosition.y && mousePosition.y < (mousePosition.y + buttonSize.Height))
+                if (mousePosition.y > GlobalPosition.y && mousePosition.y < (mousePosition.y + (buttonSize.Height * scale)))
                 {
                     return true;
                 }

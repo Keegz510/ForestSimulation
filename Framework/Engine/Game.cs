@@ -30,6 +30,8 @@ namespace Framework.Engine
         private List<GameState> loadedStates = new List<GameState>();
         public List<GameState> LoadedStates { get => loadedStates; }
 
+        bool bIsRunning = true;
+
         public Game()
         {
             if(Instance == null)
@@ -58,7 +60,7 @@ namespace Framework.Engine
             
 
 
-            while(!WindowShouldClose())
+            while(!WindowShouldClose() && bIsRunning)
             {
                 // === UPDATE GAME HERE === //
                 deltaTime = GetFrameTime();
@@ -104,6 +106,11 @@ namespace Framework.Engine
                 state.DeInit();
                 loadedStates.Remove(state);
             }
+        }
+
+        public void QuitGame()
+        {
+            bIsRunning = false;
         }
 
         

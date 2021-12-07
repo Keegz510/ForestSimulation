@@ -9,7 +9,7 @@ namespace ForestSim
             WindowSettings window = new WindowSettings
             {
                 WindowWidth = 1200,
-                WindowHeight = 850,
+                WindowHeight = 750,
                 bIsFullscreen = false,
                 WindowTitle = "Forest Simulator"
             };
