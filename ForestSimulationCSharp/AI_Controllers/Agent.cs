@@ -13,6 +13,8 @@ namespace ForestSim
         public Vector2 Velocity = new Vector2();
         public Vector2 Force = new Vector2();
 
+        protected List<IBehavior> behaviours = new List<IBehavior>();
+
         public override void Update(float deltaTime)
         {
             base.Update(deltaTime);
