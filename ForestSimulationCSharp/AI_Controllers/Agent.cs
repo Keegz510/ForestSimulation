@@ -32,5 +32,9 @@ namespace ForestSim
             SetPosition(localPosition += (Velocity * deltaTime));
             
         }
+
+        public void AddBehaviour(IBehavior behavior) => behaviours.Add(behavior);
+        public void AddForce(Vector2 force) => Force += force;
+
     }
 }
