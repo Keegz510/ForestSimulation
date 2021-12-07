@@ -28,15 +28,22 @@ namespace ForestSim
                 tempBackground = resourceManager.LoadSprite("Images/MainMenuBackground.png");
             }
 
-
-            // ==== TEST OBJECT === //
+            // Create the objects
             {
-                Font font = LoadFont("Fonts/Pergola.otf");
-                TextField field = new TextField("Test Field", font, "TestTextField");
-                field.SetTint(Color.BLACK);
-                field.SetPosition(new Framework.Maths.Vector2(200, 200));
-                resourceManager.AddDrawable(field);
+                var ag = new Agent();
+                ag.SetPosition(new Framework.Maths.Vector2(100, 100));
+                Sprite sp = resourceManager.LoadSprite("Images/Square32x32.png");
+                sp.SetTint(Color.GREEN);
+                sp.SetParent(ag);
+
+                ag.SetPosition(new Framework.Maths.Vector2(100, 100));
+                resourceManager.LoadGameObject(ag);
+
+                var kb = new KeyboardBehaviour();
+
+                ag.AddBehaviour(kb);
             }
+
         }
 
         public override void Update(float deltaTime)
