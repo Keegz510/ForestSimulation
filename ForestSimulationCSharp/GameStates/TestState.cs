@@ -14,6 +14,7 @@ namespace ForestSim
     {
 
         Sprite sprite;
+        Sprite tempBackground;
 
         public TestState() : base()
         { }
@@ -23,7 +24,9 @@ namespace ForestSim
             base.Init();
 
 
-
+            {
+                tempBackground = resourceManager.LoadSprite("Images/MainMenuBackground.png");
+            }
 
 
             // ==== TEST OBJECT === //
