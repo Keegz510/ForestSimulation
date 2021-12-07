@@ -19,7 +19,8 @@ namespace ForestSim
         {
             base.Update(deltaTime);
 
-            force = new Vector2(0, 0);
+            Force = new Vector2(0, 0);
+            Velocity.Zero();
 
             // TODO: Update Behaviours
 
