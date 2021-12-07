@@ -43,7 +43,7 @@ namespace ForestSim
             btn.Scale = 2;
 
             // Set the position of the button
-            btn.SetPosition(new Vector2(30, 70));
+            btn.SetPosition(new Vector2(10, 20));
 
             Font font = LoadFont("Fonts/Pergola.otf");
             TextField btnText = new TextField("New Simulation", font, "NewSimText");
@@ -69,13 +69,13 @@ namespace ForestSim
             };
 
             // Create the button and set the scale to be 2
-            Button btn = new Button(buttonSize, LoadSim, "ExitSimBtn");
+            Button btn = new Button(buttonSize, ExitSim, "ExitSimBtn");
             btn.Scale = 2;
             // Handle loading the new game object
             resourceManager.LoadGameObject(btn);
 
             // Set the position of the button
-            btn.SetPosition(new Vector2(30, 150));
+            btn.SetPosition(new Vector2(10, 100));
 
             Font font = LoadFont("Fonts/Pergola.otf");
             TextField btnText = new TextField("Exit Simulation", font, "ExitSimText");
@@ -99,7 +99,7 @@ namespace ForestSim
 
         public void ExitSim()
         {
-
+            Game.Instance.QuitGame();
         }
     }
 }
